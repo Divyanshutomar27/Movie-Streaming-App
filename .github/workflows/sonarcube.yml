@@ -57,6 +57,6 @@ jobs:
         with:
           push: true
           context: ./html
-          file: .html/Dockerfile
+          file: ./html/Dockerfile
           tags: divyanshutomar009/movie-streaming-frontend:latest
       
