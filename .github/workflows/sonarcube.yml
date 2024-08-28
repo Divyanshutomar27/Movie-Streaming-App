@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  build:
+  sonarqubeanalysis:
     name: Build and analyze
     runs-on: ubuntu-latest
     
@@ -28,6 +28,7 @@ jobs:
 
   
   docker-build-and-push:
+    needs: [sonarqubeanalysis]
     runs-on: ubuntu-latest
     steps:
       -
@@ -49,7 +50,7 @@ jobs:
           push: true
           context: .
           file: ./Dockerfile
-          tags: divyanshutomar009/movie-streaming-backend:latest
+          tags: divyanshutomar009/movie-streaming-backend-nodejs:latest
 
       -
         name: Build and push frontend dockerfile
