@@ -49,6 +49,7 @@ jobs:
           push: true
           context: .
           file: ./Dockerfile
+          tags: divyanshutomar009/movie-streaming-frontend:latest
 
       -
         name: Build and push frontend dockerfile
