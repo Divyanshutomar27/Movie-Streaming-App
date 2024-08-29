@@ -1,9 +1,10 @@
 name: Build
-#hello
 on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'README.md'
 
 
 jobs:
