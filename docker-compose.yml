@@ -5,7 +5,7 @@ services:
     image: divyanshutomar009/movie-streaming-backend-nodejs:latest
     container_name: node-app
     environment:
-      DB_HOST: 3.110.179.23
+      DB_HOST: 65.0.85.244
       DB_USER: admin
       DB_PASSWORD: redhat
       DB_NAME: movie_db
@@ -22,7 +22,7 @@ services:
     image: divyanshutomar009/movie-streaming-frontend:latest
     container_name: web
     environment:
-      API_URL: 3.110.179.23
+      API_URL: 65.0.85.244
     ports:
       - "80:80"
 
