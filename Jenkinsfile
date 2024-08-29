@@ -13,7 +13,7 @@ pipeline{
             steps{
                 sh 'cp $ENV .env'
                 sh 'docker-compose pull'
-                sh 'docker-compose compose up -d'
+                sh 'docker-compose up -d'
             }
         }
     }
