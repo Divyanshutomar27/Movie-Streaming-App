@@ -1,20 +1,20 @@
 pipeline{
-    agent {
-        label "ec2"
-    }
-    environment {
-        ENV = credentials('my-secret-id')
+    agent{
+        label  = "ec2"
     }
 
-stages{
-    stage("Deploy the Multi Container Application"){
-        steps{
-          sh 'cp $ENV .env'
-          sh 'docker-compose pull' //latest image pull
-          sh 'docker-compose stop web node-app'
-          sh 'docker-compose rm -f web node-app'
-          sh 'docker-compose up -d'
+    environment{
+        ENV  =  credentials('secret-id')
+    }
+
+    stages{
+
+        stage('Deploy the multicontainer application'){
+            steps{
+                sh 'cp $ENV .env'
+                sh 'docker-compose pull'
+                sh 'docker-compose compose up -d'
+            }
         }
     }
-}
 }
